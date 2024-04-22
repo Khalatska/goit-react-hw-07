@@ -34,10 +34,14 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.rejected, handleRejected)
       .addCase(addContact.pending, handlePending)
       .addCase(addContact.fulfilled, (state, action) => {
+        state.contacts.loading = false;
+        state.contacts.error = null;
         state.contacts.items.push(action.payload);
       })
       .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.fulfilled, (state, action) => {
+        state.contacts.loading = false;
+        state.contacts.error = null;
         const contactIndex = state.contacts.items.findIndex(
           (state) => state.id === action.payload.id
         );
