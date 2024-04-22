@@ -30,7 +30,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(addContact());
+    dispatch(addContact(values));
 
     actions.resetForm();
   };

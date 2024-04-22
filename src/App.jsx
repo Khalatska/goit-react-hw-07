@@ -9,12 +9,11 @@ import { selectContact, selectError, selectLoading } from "./redux/selectors";
 function App() {
   // const error = useSelector(selectError);
   // const isLoading = useSelector(selectLoading);
-  const contacts = useSelector(selectContact);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchContacts);
-    console.log(contacts);
-  }, [dispatch, contacts]);
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <div>
