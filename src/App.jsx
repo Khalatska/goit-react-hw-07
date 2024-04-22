@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectContact, selectError, selectLoading } from "./redux/selectors";
 
 function App() {
-  const error = useSelector(selectError);
-  const isLoading = useSelector(selectLoading);
+  // const error = useSelector(selectError);
+  // const isLoading = useSelector(selectLoading);
   const contacts = useSelector(selectContact);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,7 +21,7 @@ function App() {
       <h1 className="titleMain">Phonebook</h1>
       <ContactForm />
       <SearchBox />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {/* {isLoading && !error && <b>Request in progress...</b>} */}
       <ContactList />
     </div>
   );
